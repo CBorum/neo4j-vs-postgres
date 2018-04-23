@@ -46,61 +46,71 @@ func randNum() int64 {
 }
 
 func BenchmarkDepth1(b *testing.B) {
-	// b.N = 20
+	b.N = 20
 	for i := 0; i < b.N; i++ {
 		r := randNum()
 		query := fmt.Sprintf(endorsementDepth1, r)
-		rows, _ := RunQuery(query, testDB)
-		// res, _, _ := rows.All()
-		// log.Println(len(res))
-		rows.Close()
+		_, err := ExecQuery(query, testDB)
+		if err != nil {
+			panic(err)
+		}
+		// rows, _ := RunQuery(query, testDB)
+		// rows.Close()
 	}
 }
 
 func BenchmarkDepth2(b *testing.B) {
-	// b.N = 20
+	b.N = 20
 	for i := 0; i < b.N; i++ {
 		r := randNum()
 		query := fmt.Sprintf(endorsementDepth2, r)
-		rows, _ := RunQuery(query, testDB)
-		// res, _, _ := rows.All()
-		// log.Println(len(res))
-		rows.Close()
+		_, err := ExecQuery(query, testDB)
+		if err != nil {
+			panic(err)
+		}
+		// rows, _ := RunQuery(query, testDB)
+		// rows.Close()
 	}
 }
 
 func BenchmarkDepth3(b *testing.B) {
-	// b.N = 20
+	b.N = 20
 	for i := 0; i < b.N; i++ {
 		r := randNum()
 		query := fmt.Sprintf(endorsementDepth3, r)
-		rows, _ := RunQuery(query, testDB)
-		// res, _, _ := rows.All()
-		// log.Println(len(res))
-		rows.Close()
+		_, err := ExecQuery(query, testDB)
+		if err != nil {
+			panic(err)
+		}
+		// rows, _ := RunQuery(query, testDB)
+		// rows.Close()
 	}
 }
 
 func BenchmarkDepth4(b *testing.B) {
-	// b.N = 20
+	b.N = 20
 	for i := 0; i < b.N; i++ {
 		r := randNum()
 		query := fmt.Sprintf(endorsementDepth4, r)
-		rows, _ := RunQuery(query, testDB)
-		// res, _, _ := rows.All()
-		// log.Println(len(res))
-		rows.Close()
+		_, err := ExecQuery(query, testDB)
+		if err != nil {
+			panic(err)
+		}
+		// rows, _ := RunQuery(query, testDB)
+		// rows.Close()
 	}
 }
 
 func BenchmarkDepth5(b *testing.B) {
-	// b.N = 20
+	b.N = 20
 	for i := 0; i < b.N; i++ {
 		r := randNum()
 		query := fmt.Sprintf(endorsementDepth5, r)
-		rows, _ := RunQuery(query, testDB)
-		// res, _, _ := rows.All()
-		// log.Println(len(res))
-		rows.Close()
+		_, err := ExecQuery(query, testDB)
+		if err != nil {
+			panic(err)
+		}
+		// rows, _ := RunQuery(query, testDB)
+		// rows.Close()
 	}
 }

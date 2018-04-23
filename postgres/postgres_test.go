@@ -117,7 +117,7 @@ func BenchmarkDepth4(b *testing.B) {
 }
 
 func BenchmarkDepth5(b *testing.B) {
-	b.N = 1
+	b.N = 20
 	for i := 0; i < b.N; i++ {
 		r := randNum()
 		query := fmt.Sprintf(endorsementDepth5, r)

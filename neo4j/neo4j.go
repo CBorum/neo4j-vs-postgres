@@ -152,6 +152,10 @@ func RunQuery(query string, conn bolt.Conn) (bolt.Rows, error) {
 	return conn.QueryNeo(query, nil)
 }
 
+func ExecQuery(query string, conn bolt.Conn) (bolt.Result, error) {
+	return conn.ExecNeo(query, nil)
+}
+
 type person struct {
 	id       int64
 	birthday string
